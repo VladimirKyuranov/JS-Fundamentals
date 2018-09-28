@@ -18,10 +18,8 @@ function getTrip(coords) {
     switch (shortestTrip){
         case trip123:
             return `1->2->3: ${trip123}`;
-            break;
         case trip132:
             return `1->3->2: ${trip132}`;
-            break;
         case trip213:
             return `2->1->3: ${trip213}`;
     }

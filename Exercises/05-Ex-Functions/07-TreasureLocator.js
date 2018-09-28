@@ -27,9 +27,8 @@ function locateTreasures(coords) {
         if (x >= 4 && x <= 9 && y >= 7 && y <= 8) {
             return "Cook";
         }
-
+        
         return "On the bottom of the ocean";
-
     }
 }
 

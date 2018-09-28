@@ -11,9 +11,7 @@ function isPointInside(coords) {
         let inside = xIn && yIn && zIn;
 
         console.log(inside ? "inside" : "outside");
-
     }
-
 }
 
 isPointInside([8, 20, 22]);
