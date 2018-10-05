@@ -1,5 +1,7 @@
 function solve(input) {
-    input.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())).sort((a, b) => a.length - b.length);
+    input.sort((a, b) => a.toLowerCase()
+        .localeCompare(b.toLowerCase()))
+        .sort((a, b) => a.length - b.length);
 
     return input.join('\n');
 }

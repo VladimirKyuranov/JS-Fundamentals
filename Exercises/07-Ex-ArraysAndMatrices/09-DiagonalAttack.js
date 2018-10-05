@@ -15,7 +15,7 @@ function solve(input){
     if (sums[0] === sums[1]){
         for (let row = 0; row < input.length; row++) {
             for (let col = 0; col < input.length; col++) {
-                if (row !== col && row != input.length - 1 - col){
+                if (row !== col && row !== input.length - 1 - col){
                     input[row][col] = sums[0];
                 }
             }

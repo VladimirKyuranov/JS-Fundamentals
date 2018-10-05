@@ -9,7 +9,7 @@ function solve(data) {
     function hide(data) {
         let nameRegex = /\*[A-Z][a-zA-Z]*(?= |\t|$)/g;
         let phoneRegex = /\+[\d-]{10}(?= |\t|$)/g;
-        let idRegex = /\![a-zA-Z\d]+(?= |\t|$)/g;
+        let idRegex = /![a-zA-Z\d]+(?= |\t|$)/g;
         let baseRegex = /_[a-zA-Z\d]+(?= |\t|$)/g;
 
         data = data.replace(nameRegex, m => '|'.repeat(m.length))

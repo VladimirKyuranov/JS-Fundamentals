@@ -12,7 +12,7 @@ function solve(rows, cols) {
 
     while(element <= rows * cols){
 
-    for (let col = 0 + offset; col < cols - offset; col++) {
+    for (let col = offset; col < cols - offset; col++) {
         if (element > rows * cols) {
             break;
         }
@@ -46,7 +46,7 @@ function solve(rows, cols) {
     currCol++;
     currRow--;
 
-    for (let row = currRow; row >= 0 + offset; row--) {
+    for (let row = currRow; row >=  offset; row--) {
         if (element > rows * cols){
             break;
         }
