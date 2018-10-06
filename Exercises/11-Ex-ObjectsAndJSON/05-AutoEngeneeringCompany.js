@@ -4,11 +4,11 @@ function solve(input) {
     for (let car of input) {
         let[brand, model, quantity] = car.split(' | ');
 
-        if (cars.has(brand) == false){
+        if (cars.has(brand) === false){
             cars.set(brand, new Map());
         }
 
-        if (cars.get(brand).has(model) == false){
+        if (cars.get(brand).has(model) === false){
             cars.get(brand).set(model , 0);
         }
 

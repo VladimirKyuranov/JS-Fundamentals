@@ -5,7 +5,7 @@ function solve(input) {
     for (let line of input) {
         let [juice, quantity] = line.split(' => ');
 
-        if (juices.has(juice) == false) {
+        if (juices.has(juice) === false) {
             juices.set(juice, 0);
         }
 
@@ -13,7 +13,7 @@ function solve(input) {
 
         if (juices.get(juice) >= 1000) {
             let bottlesCount = parseInt(juices.get(juice) / 1000);
-            if (bottles.has(juice) == false) {
+            if (bottles.has(juice) === false) {
                 bottles.set(juice, 0);
             }
 

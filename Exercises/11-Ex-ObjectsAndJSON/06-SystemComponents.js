@@ -2,7 +2,7 @@ function solve(input) {
     let systems = new Map();
 
     for (let line of input) {
-        let [system, component, subcomponent] = line.split(' | ');
+        let [system, component, subComponent] = line.split(' | ');
 
         if (systems.has(system) === false) {
             systems.set(system, new Map());
@@ -12,7 +12,7 @@ function solve(input) {
             systems.get(system).set(component, []);
         }
 
-        systems.get(system).get(component).push(subcomponent);
+        systems.get(system).get(component).push(subComponent);
     }
 
     let systemsKeys = Array.from(systems.keys())

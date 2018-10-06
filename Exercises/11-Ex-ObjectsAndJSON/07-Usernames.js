@@ -1,6 +1,6 @@
 function solve(input) {
     input.sort((a, b) => {
-        return a.length - b.length == 0 ? a.localeCompare(b) : a.length - b.length;
+        return a.length - b.length === 0 ? a.localeCompare(b) : a.length - b.length;
     });
 
 let set = new Set();

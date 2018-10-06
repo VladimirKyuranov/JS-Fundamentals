@@ -4,7 +4,7 @@ function solve(input) {
     for (let line of input) {
         let letter = line[0];
 
-        if (dict.has(letter) == false){
+        if (dict.has(letter) === false){
             dict.set(letter, []);
         }
 
