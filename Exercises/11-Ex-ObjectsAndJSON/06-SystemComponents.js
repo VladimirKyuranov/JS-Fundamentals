@@ -4,11 +4,11 @@ function solve(input) {
     for (let line of input) {
         let [system, component, subComponent] = line.split(' | ');
 
-        if (systems.has(system) === false) {
+        if (!systems.has(system)) {
             systems.set(system, new Map());
         }
 
-        if (systems.get(system).has(component) === false) {
+        if (!systems.get(system).has(component)) {
             systems.get(system).set(component, []);
         }
 
@@ -17,9 +17,8 @@ function solve(input) {
 
     let systemsKeys = Array.from(systems.keys())
         .sort((a, b) => {
-           return systems.get(b).size - systems.get(a).size === 0
-                ? a.toLowerCase().localeCompare(b.toLowerCase())
-                : systems.get(b).size - systems.get(a).size;
+           return systems.get(b).size - systems.get(a).size 
+			   || a.toLowerCase().localeCompare(b.toLowerCase());
         });
 
     for (let system of systemsKeys) {

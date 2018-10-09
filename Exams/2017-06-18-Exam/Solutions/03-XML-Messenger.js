@@ -1,13 +1,13 @@
 function solve(input) {
 
-    let pattern = /^<message( +[a-z]+="[a-zA-Z .\d]+")+>(.|\n)+<\/message>$/g;
+    let pattern = /^<message((\s+[a-z]+="[a-zA-Z .\d]+")+\s*)*>(.|\n)+<\/message>$/g;
     
     if (!pattern.test(input)){
         return "Invalid message format";
     }
     
-    let toPattern = /to="([a-zA-Z .\d]+)"/;
-    let fromPattern = /from="([a-zA-Z .\d]+)"/;
+    let toPattern = / to="([a-zA-Z .\d]+)"/;
+    let fromPattern = / from="([a-zA-Z .\d]+)"/;
     
     if (!toPattern.test(input) || !fromPattern.test(input)) {
         return "Missing attributes";
@@ -33,4 +33,4 @@ function solve(input) {
     return result;
 }
 
-console.log(solve("<message to=\"Bob\" from=\"Alice\" timestamp=\"1497254092\">Hey man,\nwhat's up?</message>"));
+console.log(solve("<message mailto=\"everyone\" from=\"Grandma\" to=\"Everyone\">FWD: FWD: FWD: FWD: Forwards from grandma</message>"));
