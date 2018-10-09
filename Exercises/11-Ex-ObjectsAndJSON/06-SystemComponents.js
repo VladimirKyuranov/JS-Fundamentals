@@ -17,8 +17,8 @@ function solve(input) {
 
     let systemsKeys = Array.from(systems.keys())
         .sort((a, b) => {
-           return systems.get(b).size - systems.get(a).size 
-			   || a.toLowerCase().localeCompare(b.toLowerCase());
+           return systems.get(b).size - systems.get(a).size
+               || a.toLowerCase().localeCompare(b.toLowerCase());
         });
 
     for (let system of systemsKeys) {
