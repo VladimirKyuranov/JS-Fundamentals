@@ -9,11 +9,11 @@ function solve(input) {
                 let technique = arg2;
                 let skill = +arg3;
 
-                if (gladiators.has(gladiator) == false) {
+                if (!gladiators.has(gladiator)) {
                     gladiators.set(gladiator, new Map());
                 }
 
-                if (gladiators.get(gladiator).has(technique) == false) {
+                if (!gladiators.get(gladiator).has(technique)) {
                     gladiators.get(gladiator).set(technique, skill);
                 }
 
@@ -25,7 +25,7 @@ function solve(input) {
                 let gladiatorOne = arg1;
                 let gladiatorTwo = arg2;
 
-                if (gladiators.has(gladiatorOne) == false || gladiators.has(gladiatorTwo) == false) {
+                if (!gladiators.has(gladiatorOne) || !gladiators.has(gladiatorTwo)) {
                     break;
                 }
 
@@ -37,7 +37,7 @@ function solve(input) {
                     }
                 }
 
-                if (sameTechniquePresent == false) {
+                if (!sameTechniquePresent) {
                     break;
                 }
 
@@ -71,9 +71,7 @@ function solve(input) {
                     let sortedSkills = [...gladiators.get(gladiator).keys()];
                     sortedSkills.sort((a, b) => {
                         let skillDiff = gladiators.get(gladiator).get(b) - gladiators.get(gladiator).get(a);
-                        return skillDiff === 0
-                            ? a.localeCompare(b)
-                            : skillDiff;
+                        return skillDiff || a.localeCompare(b);
                     });
 
                     for (let skill of sortedSkills) {
